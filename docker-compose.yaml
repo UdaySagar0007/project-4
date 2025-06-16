@@ -22,5 +22,6 @@ services:
     image: hanvitha/course:v4
     ports:
       - "84:80"
-    deploy: 3
+    deploy: 
+      replicas: 3
     
