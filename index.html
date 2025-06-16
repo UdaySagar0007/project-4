@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pythonlife</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 15px 20px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        h1 {
+            font-size: 2.5em;
+            animation: fadeIn 2s;
+        }
+        .quote {
+            font-size: 1.5em;
+            font-style: italic;
+            margin: 20px 0;
+            color: #ffc107; /* Yellow */
+        }
+        table {
+            margin: 20px auto;
+            width: 80%;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #fff;
+        }
+        th {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        td {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .learn-devops { background-color: #28a745; }
+        .master-automation { background-color: #007bff; }
+        .hands-on-experience { background-color: #17a2b8; }
+        .join-community { background-color: #ffc107; }
+        a:hover { opacity: 0.8; }
+        #course-details {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+    <div class="container">
+        <marquee behavior="scroll" direction="left" scrollamount="4">
+            <h1>Welcome to Pythonlife DevOps</h1>
+        </marquee>
+        <div class="quote">📚 "Learn Here and Lead Anywhere" 🧭</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course </th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a class="learn-devops" onclick="showDetails('learn-devops')"><strong>Learn DevOps principles and practices</strong></a></td>
+                    <td>Understand core principles and methodologies.</td>
+                </tr>
+                <tr>
+                    <td><a class="master-automation" onclick="showDetails('master-automation')"><strong>Master the art of automation and continuous integration</strong></a></td>
+                    <td>Implement CI/CD pipelines effectively.</td>
+                </tr>
+                <tr>
+                    <td><a class="hands-on-experience" onclick="showDetails('hands-on-experience')"><strong>Gain hands-on experience with industry-standard tools</strong></a></td>
+                    <td>Work with tools like Docker, Kubernetes, Jenkins, and more.</td>
+                </tr>
+                <tr>
+                    <td><a class="join-community" onclick="showDetails('join-community')"><strong>Join a community of fellow DevOps enthusiasts</strong></a></td>
+                    <td>Network and learn from other professionals.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="course-details"></div>
+    </div>
+    <footer>
+        &copy; 2024 Pythonlife. All rights reserved.
+    </footer>
+
+    <script>
+        function showDetails(feature) {
+            const details = {
+                'learn-devops': 'This section covers the core principles of DevOps, including its lifecycle, practices, and methodologies. You will learn about the collaboration between development and operations teams.',
+                'master-automation': 'Explore the tools and techniques for automating processes in software development. This includes CI/CD pipelines, testing automation, and deployment strategies.',
+                'hands-on-experience': 'Get practical experience with tools such as Docker, Kubernetes, Jenkins, and more. Learn how to set up and manage containers, orchestrate applications, and implement CI/CD.',
+                'join-community': 'Become part of a vibrant community of DevOps professionals. Share experiences, participate in discussions, and grow your network through events and forums.'
+            };
+
+            const courseDetailsDiv = document.getElementById('course-details');
+            courseDetailsDiv.innerHTML = `<h3>${feature.replace(/-/g, ' ').toUpperCase()}</h3><p>${details[feature]}</p>`;
+            courseDetailsDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
