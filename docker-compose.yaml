@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  pythonlife:
+    image: hanvitha/pythonlife:v1
+    ports:
+      - "81:80"
+    deploy:
+      replicas: 3
+  devops:
+    image: hanvitha/devops:v2
+    ports:
+      - "82:80"
+    deploy:
+      replicas: 3
+  aws:
+    image: hanvitha/aws:v3
+    ports:
+      - "83:80"
+    deploy:
+      replicas: 3 
+  course:
+    image: hanvitha/course:v4
+    ports:
+      - "84:80"
+    deploy: 3
+    
